@@ -1,28 +1,70 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h2>测试题</h2>
+    <subject :numArr="arr"></subject>
+    <div>
+      <flag :numFlagArr="arr"></flag>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import subject from './components/Subject.vue';
+import flag from './components/Flag.vue';
 export default {
-  name: 'App',
+  data() {
+    return {
+        arr: [
+          {
+            num1: Math.floor(Math.random()*20),
+            num2: Math.floor(Math.random()*20),
+            selected: '未完成',
+            colorStr: 'undo'
+          },
+          {
+            num1: Math.floor(Math.random()*20),
+            num2: Math.floor(Math.random()*20),
+            selected: '未完成',
+            colorStr: 'undo'
+          },
+          {
+            num1: Math.floor(Math.random()*20),
+            num2: Math.floor(Math.random()*20),
+            selected: '未完成',
+            colorStr: 'undo'
+          },
+          {
+            num1: Math.floor(Math.random()*20),
+            num2: Math.floor(Math.random()*20),
+            selected: '未完成',
+            colorStr: 'undo'
+          },
+          {
+            num1: Math.floor(Math.random()*20),
+            num2: Math.floor(Math.random()*20),
+            selected: '未完成',
+            colorStr: 'undo'
+          },
+        ]
+    }
+  },
   components: {
-    HelloWorld
+    subject,
+    flag
   }
-}
+};
 </script>
 
 <style>
+body {
+  background-color: #eee;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #fff;
+  width: 500px;
+  margin: 50px auto;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  padding: 2em;
 }
 </style>
